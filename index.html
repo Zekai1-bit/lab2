@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A Day with the Bookshop Cat</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="progress-bar" aria-hidden="true"></div>
+    <div id="chapter-badge" aria-live="polite">Before opening</div>
+
+    <header class="hero">
+        <h1>A Day with the Bookshop Cat</h1>
+        <p>Come spend a day with Kitty, one scroll at a time.</p>
+        <p class="scroll-hint">Scroll down</p>
+    </header>
+
+    <main>
+
+        <section id="morning" class="parallax morning"
+                 aria-label="A fluffy tabby cat sitting on a stack of books at a colourful outdoor bookstall">
+            <div class="parallax-text">
+                <time datetime="09:05">9:05 AM</time>
+                <h2>Morning</h2>
+            </div>
+        </section>
+
+        <section class="content">
+            <h2>The shop opens at <time datetime="09:00">nine</time>. Kitty opens at <time datetime="09:05">9:05</time>.</h2>
+            <p>Stop by the little bookstall on the corner at <time datetime="09:00">nine</time> and you'll hear the shutters rattle up. Wait <time datetime="PT5M">five more minutes</time> and you'll see Kitty stroll in, as if the shop had been waiting for him. Which, of course, it had.</p>
+            <p>Watch him inspect the new arrivals the way a critic reviews a novel: slowly, and mostly by sitting on them. Today's stack of puzzle books gets his verdict: sunny, firm, and perfect for watching customers like you.</p>
+        </section>
+
+        <section id="afternoon" class="parallax afternoon"
+                 aria-label="A tabby cat and a ginger cat curled up together on a reader's lap on sunny grass, with the reader's hand resting on an open book above them">
+            <div class="parallax-text">
+                <time datetime="14:30">2:30 PM</time>
+                <h2>Afternoon</h2>
+            </div>
+        </section>
+
+        <section class="content">
+            <h2>Two cats, one lap, zero interest in the plot.</h2>
+            <p>By afternoon the sun has moved to the park across the street, and so has Kitty. Sit down on the grass with a paperback and a soft blanket, and you won't be alone for long: his friend Marmalade claims your lap first.</p>
+            <p>Try to turn a page. Marmalade leans on it. Then Kitty climbs aboard and pushes his head into your hand until you give up reading and start petting.</p>
+        </section>
+
+        <section id="evening" class="parallax evening"
+                 aria-label="A grey long-haired tabby cat resting its head on an open book on a white bed, eyes half closed">
+            <div class="parallax-text">
+                <time datetime="19:45">7:45 PM</time>
+                <h2>Evening</h2>
+            </div>
+        </section>
+
+        <section class="content">
+            <h2>Some stories are best read with your eyes closed.</h2>
+            <p>When the streetlights flicker on, Kitty follows you home. He finds the book you left open on the bed and lies down beside it, just to see how the story ends.</p>
+            <p>Watch his eyelids grow heavier with every line. Let him sleep; you can finish the chapter tomorrow. The book will still be there in the morning. So will he.</p>
+        </section>
+
+        <section class="ending">
+            <h2>The End</h2>
+            <p>Thanks for keeping him company today. Goodnight, Kitty.</p>
+        </section>
+    </main>
+
+    <button id="pet-button" type="button">
+        Pet Kitty <span id="pet-count">0</span>
+    </button>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <footer>
+        <p>Author: Zekai Wan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
