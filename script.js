@@ -1,11 +1,12 @@
 const progressBar = document.getElementById('progress-bar');
 const chapterBadge = document.getElementById('chapter-badge');
-const petButton = document.getElementById('pet-button');
 const petCount = document.getElementById('pet-count');
 const toast = document.getElementById('toast');
 const chapters = document.querySelectorAll('.parallax');
 
-window.addEventListener('scroll', function () {
+let pets = 0;
+
+function updateProgress() {
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
     progressBar.style.width = (window.scrollY / scrollable) * 100 + '%';
 
@@ -15,16 +16,18 @@ window.addEventListener('scroll', function () {
                                        chapter.querySelector('h2').textContent;
         }
     });
-});
+}
 
-let pets = 0;
-let toastTimer;
-
-petButton.addEventListener('click', function () {
-    pets++;
+function petKitty() {
+    pets += 1;
     petCount.textContent = pets;
-
     toast.textContent = 'Purrr… Kitty has been petted ' + pets + (pets === 1 ? ' time.' : ' times.');
     toast.classList.add('visible');
 
-});
+    setTimeout(function () {
+        toast.classList.remove('visible');
+    }, 2500);
+}
+
+window.addEventListener('scroll', updateProgress);
+document.getElementById('pet-button').addEventListener('click', petKitty);
