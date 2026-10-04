@@ -5,10 +5,12 @@ const toast = document.getElementById('toast');
 const chapters = document.querySelectorAll('.parallax');
 
 let pets = 0;
+let toastTimer;
 
 function updateProgress() {
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
     progressBar.style.width = (window.scrollY / scrollable) * 100 + '%';
+    chapterBadge.textContent = 'Before opening';
 
     chapters.forEach(function (chapter) {
         if (chapter.getBoundingClientRect().top <= window.innerHeight / 2) {
@@ -24,10 +26,12 @@ function petKitty() {
     toast.textContent = 'Purrr… Kitty has been petted ' + pets + (pets === 1 ? ' time.' : ' times.');
     toast.classList.add('visible');
 
-    setTimeout(function () {
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
         toast.classList.remove('visible');
     }, 2500);
 }
 
 window.addEventListener('scroll', updateProgress);
 document.getElementById('pet-button').addEventListener('click', petKitty);
+
